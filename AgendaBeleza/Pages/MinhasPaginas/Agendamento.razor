@@ -1,0 +1,45 @@
+﻿@page "/Data/Agendamento"
+
+@using DadosAcesso
+@using DadosAcesso.Models
+
+@inject IAgendamentoDados _db
+
+<h3>Agendamento</h3>
+<h4>Aqui você faz seu agendamento</h4>
+
+@if(agendamento is null)
+{
+    <p><em>Carregando agendamentos</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Horário ínicio</th>
+                <th>Horário fim</th>
+                <th>Data e hora do agendamento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var agendamento in agendamento)
+            {
+                <tr>
+                    <td>@agendamento.HoraInicioAgendamento</td>
+                    <td>@agendamento.HoraFimAgendamento</td>
+                    <td>@agendamento.DiaHoraAgendamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<AgendamentoModels> agendamento;
+
+    protected override async Task OnInitializedAsync()
+    {
+        agendamento = await _db.GetAgendamentos();
+    }
+}
