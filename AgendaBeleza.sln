@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgendaBeleza", "AgendaBeleza\AgendaBeleza.csproj", "{6F5B9241-605B-4006-AE07-54270DC9C2F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgendaBeleza", "AgendaBeleza\AgendaBeleza.csproj", "{6F5B9241-605B-4006-AE07-54270DC9C2F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DadosAcesso", "DadosAcesso\DadosAcesso.csproj", "{321F5459-A5F7-4D4B-9B1B-D0700A415ADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DadosAcesso", "DadosAcesso\DadosAcesso.csproj", "{321F5459-A5F7-4D4B-9B1B-D0700A415ADE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

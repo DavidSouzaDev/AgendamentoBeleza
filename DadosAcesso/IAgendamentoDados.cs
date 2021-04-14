@@ -6,7 +6,9 @@ namespace DadosAcesso
 {
     public interface IAgendamentoDados
     {
-        Task<List<AgendamentoModels>> GetAgendamentos();
-        Task InserirAgendamento(AgendamentoModels agendamento);
+        Task <List<AgendamentoModels>> GetAgendamentos();
+        Task<List<ClienteModels>> GetClientes();
+        Task<List<TipoServicoModels>> GetTipoServico();
+        Task InserirAgendamento(InsereAgendamentoModels agendamento);
     }
 }

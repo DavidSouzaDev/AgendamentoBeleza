@@ -5,10 +5,10 @@
 
 @inject IAgendamentoDados _db
 
-<h3>Agendamento</h3>
-<h4>Aqui você faz seu agendamento</h4>
+<h3>Agendamentos</h3>
+<h4>Aqui você vê os agendamentos</h4>
 
-@if(agendamento is null)
+@if (agendamentos is null)
 {
     <p><em>Carregando agendamentos</em></p>
 }
@@ -17,18 +17,23 @@ else
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>Data e hora do agendamento</th>
                 <th>Horário ínicio</th>
                 <th>Horário fim</th>
-                <th>Data e hora do agendamento</th>
+                <th>Nome Cliente</th>
+                <th>Tipo de Serviço</th>
             </tr>
+
         </thead>
         <tbody>
-            @foreach(var agendamento in agendamento)
+            @foreach (var agendamento in agendamentos)
             {
                 <tr>
+                    <td>@agendamento.DiaHoraAgendamento</td>
                     <td>@agendamento.HoraInicioAgendamento</td>
                     <td>@agendamento.HoraFimAgendamento</td>
-                    <td>@agendamento.DiaHoraAgendamento</td>
+                    <td>@agendamento.NomeCliente</td>
+                    <td>@agendamento.DescricaoTipoServico</td>
                 </tr>
             }
         </tbody>
@@ -36,10 +41,11 @@ else
 }
 
 @code {
-    private List<AgendamentoModels> agendamento;
+    private List<AgendamentoModels> agendamentos;
+  
 
     protected override async Task OnInitializedAsync()
     {
-        agendamento = await _db.GetAgendamentos();
+        agendamentos = await _db.GetAgendamentos();       
     }
 }

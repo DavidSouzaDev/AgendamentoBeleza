@@ -1,9 +1,9 @@
 C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\bin\Debug\netstandard2.0\DadosAcesso.deps.json
 C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\bin\Debug\netstandard2.0\DadosAcesso.dll
-C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\obj\Debug\netstandard2.0\DadosAcesso.csprojAssemblyReference.cache
+C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\bin\Debug\netstandard2.0\DadosAcesso.pdb
 C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\obj\Debug\netstandard2.0\DadosAcesso.AssemblyInfoInputs.cache
 C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\obj\Debug\netstandard2.0\DadosAcesso.AssemblyInfo.cs
-C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\bin\Debug\netstandard2.0\DadosAcesso.pdb
 C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\obj\Debug\netstandard2.0\DadosAcesso.csproj.CoreCompileInputs.cache
 C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\obj\Debug\netstandard2.0\DadosAcesso.dll
 C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\obj\Debug\netstandard2.0\DadosAcesso.pdb
+C:\Temp\C#\AgendaBeleza\AgendaBeleza\DadosAcesso\obj\Debug\netstandard2.0\DadosAcesso.csprojAssemblyReference.cache
