@@ -1,6 +1,60 @@
 ﻿@page "/"
+@using DadosAcesso
+@using DadosAcesso.Models
+
+@inject IAgendamentoDados _db
 
 <h1>Bem-vindo a agenda da Beleza</h1>
+<p>A sua agenda de beleza na palma da sua mão!</p>
 
-A sua agenda de beleza na palma da sua mão!
+<section>
+    <div class="div-cadastre-se">
+        <h4>Cadastre-se</h4>
+        <p>Aqui você faz seu cadastro no Agenda Beleza e fica por dentro das nossas novidades!</p>
+    </div>
+</section>
+
+<br /><br /><br /><br /><br />
+<EditForm Model="_agendar" OnValidSubmit="@Submit">
+    <div class="login">
+        <label>Usuário:</label>
+        <InputText id="usuario" @bind-Value="@Usuario"></InputText><br />
+        <label>Senha:</label>
+        <InputText id="senha" @bind-Value="@Senha" type="password"></InputText><br />
+        <br />
+        <button type="submit">Fazer Agendamento</button>
+    </div>
+</EditForm>
+
+@code{
+    private InsereAgendamentoModels _agendar = new InsereAgendamentoModels();
+    private string Usuario { get; set; }
+    private string Senha { get; set; }
+
+    private void Submit()
+    {
+        //_agendar
+    }
+}
+
+<style>
+    .div-cadastre-se {
+        background: purple;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid gray;
+        text-align: center;
+        width: 150px;
+        height: 150px;
+        font-size: 15px;
+    }
+
+    .login{
+        border: 2px solid blue;
+        text-align: center;
+        width: 300px;
+        height: 300px;
+       margin-left: 500px;
+    }
+</style>
 

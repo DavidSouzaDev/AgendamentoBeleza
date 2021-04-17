@@ -41,19 +41,17 @@ namespace DadosAcesso
         
 
         public Task InserirAgendamento(InsereAgendamentoModels agendamento)
-        {                     
-            var HoraInicioAgendamento = agendamento.HoraInicioAgendamento;
-            var HoraFimAgendamento = agendamento.HoraFimAgendamento;
-            var DiaHoraAgendamento = agendamento.DiaHoraAgendamento;
+        {
+            var HoraInicioAgendamento = DateTime.Now.Date.ToString("yyyy-MM-dd");
+            var HoraFimAgendamento = DateTime.Now.Date.ToString("yyyy-MM-dd");
+            var DiaHoraAgendamento = DateTime.Now.Date.ToString("yyyy-MM-dd");
+
             var IdTipoServico = 1;//agendamento.IdTipoServico;
             var IdCliente = 1;//agendamento.IdCliente;
             var IdEmpresa = 1;//agendamento.IdEmpresa;
             var IdGerente = 1;//agendamento.IdGerente;
 
-            string sql = @"INSERT INTO dbo.TabelaAgendamento (HoraInicioAgendamento, HoraFimAgendamento, DiaHoraAgendamento, 
-                            IdTipoServico, IdCliente, IdEmpresa, IdGerente)
-                            VALUES (" + HoraInicioAgendamento + "," + HoraFimAgendamento + "," + DiaHoraAgendamento + ","
-                            + IdTipoServico + "," + IdCliente + "," + IdEmpresa + "," + IdGerente + ");";
+            string sql = @"INSERT INTO TabelaAgendamento (HoraInicioAgendamento, HoraFimAgendamento, DiaHoraAgendamento, IdTipoServico, IdCliente, IdEmpresa, IdGerente) VALUES (" + HoraInicioAgendamento + "," + HoraFimAgendamento + "," + DiaHoraAgendamento + "," + IdTipoServico + "," + IdCliente + "," + IdEmpresa + "," + IdGerente + ");";
 
             return _db.SalvarDados(sql, agendamento);
         }       

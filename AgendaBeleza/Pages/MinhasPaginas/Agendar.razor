@@ -7,40 +7,26 @@
 
 <h3>Agendamento</h3>
 <h4>Aqui você faz seu agendamento</h4>
-
-<EditForm Model="_agendar" OnValidSubmit="@HandleValidSubmit">
-    
-        <label>Nome:</label>
-        <InputText id="nome" @bind-Value="@NomeCliente"></InputText>
-       
-        <button type="submit">Fazer Agendamento</button>    
+<EditForm Model="_agendar" OnValidSubmit="@Submit">
+    <label>Nome:</label>
+    <InputText id="nome" @bind-Value="@NomeCliente"></InputText><br />
+    <label>Cpf:</label>
+    <InputText id="cpf" @bind-Value="@CpfCliente"></InputText><br />
+    <label>Rg:</label>
+    <InputText id="rg" @bind-Value="@RgCliente"></InputText><br /><br />
+    <button type="submit">Fazer Agendamento</button>
 </EditForm>
 
+
 @code {
-    private List<ClienteModels> clientes;
-    private List<TipoServicoModels> tiposServico;
     private InsereAgendamentoModels _agendar = new InsereAgendamentoModels();
     private string NomeCliente { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        clientes = await _db.GetClientes();
-        tiposServico = await _db.GetTipoServico();
-    }
-
-    private void HandleValidSubmit(EditContext context)
-    {
-        var x = NomeCliente;
-        _agendar.DiaHoraAgendamento = DateTime.Now;
-
-        //var x =_agendar.NomeCliente;
-
-        _db.InserirAgendamento(_agendar);
-    }
+    private string CpfCliente { get; set; }
+    private string RgCliente { get; set; }
 
     private void Submit()
     {
-
+        _db.InserirAgendamento(_agendar);
     }
 
 }

@@ -22,18 +22,20 @@ else
                 <th>Horário fim</th>
                 <th>Nome Cliente</th>
                 <th>Tipo de Serviço</th>
+                <th>E-mail Cliente</th>
             </tr>
-
         </thead>
+
         <tbody>
             @foreach (var agendamento in agendamentos)
             {
                 <tr>
-                    <td>@agendamento.DiaHoraAgendamento</td>
+                    <td>@agendamento.DiaHoraAgendamento.ToString("hh:MM:ss")</td>
                     <td>@agendamento.HoraInicioAgendamento</td>
                     <td>@agendamento.HoraFimAgendamento</td>
                     <td>@agendamento.NomeCliente</td>
                     <td>@agendamento.DescricaoTipoServico</td>
+                    <td>@agendamento.EmailCliente</td>
                 </tr>
             }
         </tbody>
@@ -42,10 +44,10 @@ else
 
 @code {
     private List<AgendamentoModels> agendamentos;
-  
 
     protected override async Task OnInitializedAsync()
     {
-        agendamentos = await _db.GetAgendamentos();       
+        agendamentos = await _db.GetAgendamentos();
     }
 }
+
